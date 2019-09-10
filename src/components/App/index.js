@@ -28,6 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.firebase.auth.onAuthStateChanged(authUser => {
+      console.log(authUser)
       authUser
         ? this.props.firebase.user(authUser.uid).get()
             .then(snapShot => this.setState({ authUser: Object.assign(snapShot.data(), {id: snapShot.id} )}))

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 import SignOutButton from '../SignOut'
 import Hamburger from '../Hamburger'
@@ -16,8 +16,9 @@ import {
 } from './style'
 
 const Navigation = ({authUser}) => {
+  console.log(authUser, 'this is authUser from  nav')
     const [ isOpen, setIsOpen ] = useState(false)
-    // window.onresize = ()=> (window.innerWidth > 900 && isOpen) && setIsOpen(false)
+    window.onresize = ()=> (window.innerWidth > 900 && isOpen) && setIsOpen(false)
     return (
       <Header>
         <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
@@ -25,10 +26,10 @@ const Navigation = ({authUser}) => {
           <H1>Dipn'N'Sipn</H1>
         </DivTitle>
         <DivNav>
-          {authUser ? <NavigationAuth authUser={authUser}/> : <NavigationNonAuth setIsOpen={setIsOpen} isOpen={isOpen}/>}
+          {authUser ? <NavigationAuth setIsOpen={setIsOpen} isOpen={isOpen} authUser={authUser}/> : <NavigationNonAuth setIsOpen={setIsOpen} isOpen={isOpen}/>}
         </DivNav>
         <Overlay className={isOpen ? "show" : "hide"}>
-          {authUser ? <NavigationAuth authUser={authUser} /> : <NavigationNonAuth  setIsOpen={setIsOpen} isOpen={isOpen}/>}
+          {authUser ? <NavigationAuth setIsOpen={setIsOpen} isOpen={isOpen} authUser={authUser} /> : <NavigationNonAuth  setIsOpen={setIsOpen} isOpen={isOpen}/>}
         </Overlay>
       </Header>
     )
