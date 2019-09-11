@@ -7,12 +7,6 @@ Dipn N Sipn is where adventure meets good times with drinks. The purpose of this
 ![](https://i.imgur.com/osw6sJX.png)
 ![](https://i.imgur.com/ByzrueM.png)
 
-
-Instructions 
----------------
-
-
-
 Technologies
 ---------------
 Technologies used are REACT JavaScript JSX Styled-Components Firebase GoogleMaps Yelp
