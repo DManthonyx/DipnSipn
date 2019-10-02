@@ -64,6 +64,9 @@ export const Button = styled.button`
   color: white;
   font-size: 1em;
   box-shadow: 0px 0px 5px #00A6ED;
+  :nth-child(1) {
+    font-size: 14px;
+  }
 `
 
 export const Input = styled.input`
