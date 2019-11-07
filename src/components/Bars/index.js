@@ -40,10 +40,9 @@ class Bars extends Component {
       const {latitude, longitude} = position.coords;
       this.setState({
         userLocation: { lat: latitude, lng: longitude },
-      },() =>   {
-        this.getBarsYelp()
       });
     })
+    this.getBarsYelp()
   };
 
   getBarsYelp = () => {
@@ -154,8 +153,8 @@ class Bars extends Component {
               height: '400px',                     
               }}
             initialCenter={{
-              lat: userLocation.lat, 
-              lng: userLocation.lng
+              lat: this.state.userLocation.lat, 
+              lng: this.state.userLocation.lng
             }}
             >
             {
